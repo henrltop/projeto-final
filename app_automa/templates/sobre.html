@@ -1,0 +1,192 @@
+{% extends "modelo.html" %}
+{% load static %}
+
+ {% block titulo %} 
+    <title>Sobre</title>
+ {% endblock %}
+
+ {% block conteudo %} 
+
+ <section id="sobre" style="background-color: #E8E8E8;">
+  <main class="container my-5">
+    <h1 class="mb-4">Sobre Nós</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img/sobre-nos.jpg" class="img-fluid rounded mb-4" alt="Imagem sobre a empresa">
+        <div style>
+          <div class="container-fluid rounded-3" style="background-color: #D3D3D3;">
+            <h1>Automatec</h1>
+            <p>A Automatec é uma empresa inovadora e em rápido crescimento, dedicada a fornecer soluções de automação personalizadas para empresas de todos os portes e setores. Nossa missão é ajudar nossos clientes a otimizar seus processos, aumentar sua produtividade e reduzir seus custos, através da implementação de tecnologias de automação de última geração.</p>
+            
+          </div>      
+            <p>Nosso objetivo é Fornecer soluções de automação que otimizem os processos dos nossos clientes e contribuam para o seu sucesso.</p>
+            <p>Acreditamos em <b> Inovação</b>, <b>Excelência</b>, <b>Comprometimento</b> e <b>Responsabilidade social</b>.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>Nossa Missão</h2>
+        <p>[Descrição da missão da empresa]</p>
+        <h2>Nossa Visão</h2>
+        <p>[Descrição da visão da empresa]</p>
+        <h2>Nossos Valores</h2>
+        <ul>
+          <li>[Valor 1]</li>
+          <li>[Valor 2]</li>
+          <li>[Valor 3]</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="background-color: #DADADA;">
+          <img src="{% static "img/sobre/henrique.png"%}" class="card-img-top" alt="Imagem de você">
+          <div class="card-body">
+            <h5 class="card-title">Henrique Severino da Cunha</h5>
+            <p class="card-text">
+              <h6>Programador</h6>
+              <br>
+              Aluno de Engenharia de Controle e Automação no Instituto Federal de Mato Grosso e desenvolvedor de automações de sistemas locais e web
+            </p>
+            <a href="https://www.linkedin.com/in/henrique-severino-da-cunha-93b8a5149" target="_blank" >
+              <img src="{% static "img/sobre/linkedin.png" %}" width="40" height="40"  alt="LinkedIn">
+            </a>       </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 shadow p-3 mb-5 bg-body rounded">
+          <img src="{%static 'img/sobre/namem.png'%}" width="40" class="card-img-top" alt="Imagem do seu companheiro">
+          <div class="card-body">
+            <h5 class="card-title">Namem Rachid Jaudy Neto</h5>
+            <p class="card-text">
+              <h6>Programador</h6>
+              <br>
+              Aluno de Engenharia da Computação no Instituto Federal de Mato Grosso e desenvolvedor de automações de sistemas de segurança, locais e web
+            </p>
+            <a href="https://www.linkedin.com/in/namem-rachid-jaudy-616138124/" target="_blank" >
+              <img src="{% static "img/sobre/linkedin.png" %}" width="40" height="40"  alt="LinkedIn">
+            </a> 
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+   <p>
+     <a href="[link para seu portfólio/site externo]">Veja meu portfólio</a> 
+     | 
+     <a href="[link para contato]">Entre em contato comigo</a>
+   </p>
+ 
+ </section>
+ {% endblock %}
+
+ <!--          rodapé           -->
+
+
+ {% block rodape%}
+ <div class="bg-light">
+   <!-- Remove the container if you want to extend the Footer to full width. -->
+ <div>
+ <!-- Footer -->
+ <footer class="text-center text-white" style="background-color: #3f51b5">
+ <!-- Grid container -->
+ <div class="container">
+ <!-- Section: Links -->
+ <section class="mt-5">
+   <!-- Grid row-->
+   <div class="row text-center d-flex justify-content-center pt-5">
+     <!-- Grid column -->
+     <div class="col-md-2">
+       <h6 class="text-uppercase font-weight-bold">
+         <a href="#!" class="text-white">Sobre nós</a>
+       </h6>
+     </div>
+ 
+     <div class="col-md-2">
+       <h6 class="text-uppercase font-weight-bold">
+         <a href="#!" class="text-white">Serviços</a>
+       </h6>
+     </div>
+ 
+     <div class="col-md-2">
+       <h6 class="text-uppercase font-weight-bold">
+         <a href="#!" class="text-white">Sujestões</a>
+       </h6>
+     </div>
+ 
+     <div class="col-md-2">
+       <h6 class="text-uppercase font-weight-bold">
+         <a href="#!" class="text-white">Suporte</a>
+       </h6>
+     </div>
+ 
+     <div class="col-md-2">
+       <h6 class="text-uppercase font-weight-bold">
+         <a href="{%url 'contato'%}" class="text-white">Contato</a>
+       </h6>
+     </div>
+     <!-- Grid column -->
+   </div>
+   <!-- Grid row-->
+ </section>
+ <!-- Section: Links -->
+ 
+ <hr class="my-5" />
+ 
+ <!-- Section: Text -->
+ <section class="mb-5">
+   <div class="row d-flex justify-content-center">
+     <div class="col-lg-8">
+       <p>
+         Descrição do site que eu ainda não sei qual é, mas é exatamente nesse espaço aqui que ela vai ficar assim
+         qu eu descobrir como q ela vai ser
+       </p>
+     </div>
+   </div>
+ </section>
+ <!-- Section: Text -->
+ 
+ <!-- Section: Social -->
+ <section class="text-center mb-5">
+   <a href="" class="text-white me-4">
+     <i class="fab fa-facebook-f"></i>
+   </a>
+   <a href="" class="text-white me-4">
+     <i class="fab fa-twitter"></i>
+   </a>
+   <a href="" class="text-white me-4">
+     <i class="fab fa-google"></i>
+   </a>
+   <a href="" class="text-white me-4">
+     <i class="fab fa-instagram"></i>
+   </a>
+   <a href="" class="text-white me-4">
+     <i class="fab fa-linkedin"></i>
+   </a>
+   <a href="" class="text-white me-4">
+     <i class="fab fa-github"></i>
+   </a>
+ </section>
+ <!-- Section: Social -->
+ </div>
+ <!-- Grid container -->
+ 
+ <!-- Copyright -->
+ <div
+    class="text-center p-3"
+    style="background-color: rgba(0, 0, 0, 0.2)"
+    >
+ © 2024 Copyright:
+ <a class="text-white" href="https://www.instagram.com/heriquesev/"
+    >Henrique Cunha</a
+   >
+ </div>
+ <!-- Copyright -->
+ </footer>
+ <!-- Footer -->
+ </div>
+ <!-- End of .container -->
+ </div>
+ {% endblock %}
+ 
