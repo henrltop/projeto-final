@@ -2,4 +2,3 @@ Olá, me chamo henrique severinoda cunha e este é o protótipo do meu projeto d
 
 (windowns) - python manage.py runserver
 (linux)  - python3 manage.py runserver
-( os taus taus taus)
