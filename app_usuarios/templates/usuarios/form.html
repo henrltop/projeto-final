@@ -1,0 +1,18 @@
+{% extends "app_automa/modelo.html" %}
+{% load static %}
+
+{% block conteudo %}
+{% endblock %}
+
+{% load crispy_forms_tags  %}
+
+{% block conteudo %}
+{%if request.user.is_autoticated %}
+
+{% else %}
+    {% csrf_token %}
+
+    {%form|crispy%}
+{% endif %}
+{% endblock %}
+
