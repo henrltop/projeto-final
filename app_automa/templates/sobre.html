@@ -1,0 +1,87 @@
+{% extends "modelo.html" %}
+{% load static %}
+
+
+<!-- título da página-->
+<title>Contato</title>
+<link rel='icon' href="{% static 'img/icon.png'%} ">
+<!--______________________________________________________-->
+
+ {% block conteudo %} 
+
+ <section id="sobre" style="background-color: #E8E8E8;">
+  <main class="container my-5">
+    <h1 class="mb-4">Sobre Nós</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img/sobre-nos.jpg" class="img-fluid rounded mb-4" alt="Imagem sobre a empresa">
+        <div style>
+          <div class="container-fluid rounded-3" style="background-color: #D3D3D3;">
+            <h1>Automatec</h1>
+            <p>A Automatec é uma empresa inovadora e em rápido crescimento, dedicada a fornecer soluções de automação personalizadas para empresas de todos os portes e setores. Nossa missão é ajudar nossos clientes a otimizar seus processos, aumentar sua produtividade e reduzir seus custos, através da implementação de tecnologias de automação de última geração.</p>
+            
+          </div>      
+            <p>Nosso objetivo é Fornecer soluções de automação que otimizem os processos dos nossos clientes e contribuam para o seu sucesso.</p>
+            <p>Acreditamos em <b> Inovação</b>, <b>Excelência</b>, <b>Comprometimento</b> e <b>Responsabilidade social</b>.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>Nossa Missão</h2>
+        <p>[Descrição da missão da empresa]</p>
+        <h2>Nossa Visão</h2>
+        <p>[Descrição da visão da empresa]</p>
+        <h2>Nossos Valores</h2>
+        <ul>
+          <li>[Valor 1]</li>
+          <li>[Valor 2]</li>
+          <li>[Valor 3]</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="background-color: #DADADA;">
+          <img src="{% static "img/sobre/henrique.png"%}" class="card-img-top" alt="Imagem de você">
+          <div class="card-body">
+            <h5 class="card-title">Henrique Severino da Cunha</h5>
+            <p class="card-text">
+              <h6>Programador</h6>
+              <br>
+              Aluno de Engenharia de Controle e Automação no Instituto Federal de Mato Grosso e desenvolvedor de automações de sistemas locais e web
+            </p>
+            <a href="https://www.linkedin.com/in/henrique-severino-da-cunha-93b8a5149" target="_blank" >
+              <img src="{% static "img/sobre/linkedin.png" %}" width="40" height="40"  alt="LinkedIn">
+            </a>       </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 shadow p-3 mb-5 bg-body rounded">
+          <img src="{%static 'img/sobre/namem.png'%}" width="40" class="card-img-top" alt="Imagem do seu companheiro">
+          <div class="card-body">
+            <h5 class="card-title">Namem Rachid Jaudy Neto</h5>
+            <p class="card-text">
+              <h6>Programador</h6>
+              <br>
+              Aluno de Engenharia da Computação no Instituto Federal de Mato Grosso e desenvolvedor de automações de sistemas de segurança, locais e web
+            </p>
+            <a href="https://www.linkedin.com/in/henrique-severino-da-cunha-93b8a5149" target="_blank" >
+              <img src="{% static "img/sobre/linkedin.png" %}" width="40" height="40"  alt="LinkedIn">
+            </a> 
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+   <p>
+     <a href="[link para seu portfólio/site externo]">Veja meu portfólio</a> 
+     | 
+     <a href="[link para contato]">Entre em contato comigo</a>
+   </p>
+ 
+ </section>
+ {% endblock %}
+
+ <!--          rodapé           -->
+
