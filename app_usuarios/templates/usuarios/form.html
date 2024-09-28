@@ -1,18 +1,16 @@
-{% extends "app_automa/modelo.html" %}
-{% load static %}
+{% extends "modelo.html"%}
+{%load static%}
 
-{% block conteudo %}
-{% endblock %}
+{%load crispy_forms_tags%}
 
-{% load crispy_forms_tags  %}
 
-{% block conteudo %}
-{%if request.user.is_autoticated %}
+    {% block conteudo%}
+    <form action="" method='post'>
+       {% csrf_token %}
 
-{% else %}
-    {% csrf_token %}
+        {{form|crispy}}
+        <button type='submit' class="btn btn-primary">Cadastrar</button>
+        
+    </form>
 
-    {%form|crispy%}
-{% endif %}
-{% endblock %}
-
+    {%endblock%}

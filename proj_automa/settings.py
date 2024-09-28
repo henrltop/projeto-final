@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b2b_(acz&%ji(=*!39#*jbsy8_gy8=h)cy)@kl^gp9ta+@ka4v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.102', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,8 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_automa', # esse é o app que criamos
-    'app_cadastro', # esse é o app que criamos
+    'app_cadastros', # esse é o app que criamos
+    'app_usuarios.apps.AppUsuariosConfig', # esse é o app que criamos
+    'crispy_forms', # essa pe a biblioteca para formatar os formulários
+    'crispy_bootstrap4', # essa é a configuração para o crispy_forms
+
+    
+
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # essa é a configuração para o crispy_forms
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,3 +137,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
+
+# Configuração do email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'automatec206@gmail.com'
+EMAIL_HOST_PASSWORD = 'kyfhgqnrkbxjaqls'

@@ -4,7 +4,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 class UsuarioForm(UserCreationForm):
-    email = forms.EmailField(max_length=100)
+   
+    def email(self):
+         email = forms.EmailField(max_length=100)
+
 
     class Meta:
         model = User
@@ -16,3 +19,10 @@ class UsuarioForm(UserCreationForm):
             raise ValidationError("O email {} já está em uso.".format(e))
 
         return e
+
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']

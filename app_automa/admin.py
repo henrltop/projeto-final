@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import pedidos, tipo_de_automação
 
-# Register your models here.
+admin.site.register(pedidos)
+admin.site.register(tipo_de_automação)

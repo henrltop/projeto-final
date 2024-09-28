@@ -1,0 +1,47 @@
+
+{% extends "modelo.html" %} 
+
+{% load static%}
+    
+    {% block conteudo %}
+    <div class="container" style="padding-top: 60px;">
+      <h2>Lista de produtos</h2>
+
+      {% if request.user.is_authenticated %}
+        <div class="table-responsive"> 
+          <table class="table table-striped">
+              <tr>
+                <td>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Data de Criação</th>
+                <td>Opções</td>
+              </tr>
+              {% for pedido in object_list %}
+              <tr>
+                <td>{{ pedido.id }}</td>
+                <td>{{ pedido.nome }}</td>
+                <td>{{ pedido.mensagem }}</td>
+                <td>{{ pedido.criado_em }}</td>
+                <td>
+                    <a href="{% url 'editar-pedido' pedido.pk %}" class="btn btn-warning btn-sm" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a href="{% url 'excluir-pedido' pedido.pk %}" class="btn btn-danger btn-sm" title="Excluir"><i class="fas fa-trash" aria-hidden="true"></i></a>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="3">Nenhum pedido cadastrado</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        {% else %}
+        <div class="container" style="padding-top: 60px;">
+          <h2>ERRO</h2>
+          <p class="lead">preencha todos os campos</p>
+          <hr>
+          <p class="lead"><h3>Faça login para visualizar as suas solicitações</h3></p>
+        {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+    ``

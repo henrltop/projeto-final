@@ -6,49 +6,41 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 from .models import Perfil
+from django.core.mail import send_mail
+from django.contrib.auth.forms import UserChangeForm
+from .forms import UserUpdateForm
 
-# Create your views here.
+
+#____________________ CRIAR USUÁRIO _______________________
 class UsuarioCreate(CreateView):
-    template_name = "cadastros/form.html"
+    template_name = "usuarios/form.html"
     form_class = UsuarioForm
     success_url = reverse_lazy('login')
 
     def form_valid(self, form):
+        response = super(UsuarioCreate, self).form_valid(form)
 
-        grupo = get_object_or_404(Group, name="Docente")
+        send_mail(
+            'Bem-vindo ao nosso site!',
+            'Obrigado por se registrar.',
+            'from@example.com',
+            [form.instance.email],  # Use the email from the form
+            fail_silently=False,
+        )
 
-        url = super().form_valid(form)
+        return response
 
-        self.object.groups.add(grupo)
-        self.object.save()
 
-        Perfil.objects.create(usuario=self.object)
+#____________________ ATUALIZAR USUÁRIO _______________________
+class PerfilUpdate(UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    template_name = 'usuarios/form.html'
+    success_url = reverse_lazy('home')
 
-        return url
+    def get_object(self):
+        return self.request.user
+    
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Registro de novo usuário"
-        context['botao'] = "Cadastrar"
-
-        return context
 
     
-class PerfilUpdate(UpdateView):
-    template_name = "cadastros/form.html"
-    model = Perfil
-    fields = ["nome_completo", "email", "telefone"]
-    success_url = reverse_lazy("index")
-
-    def get_object(self, queryset=None):
-        self.object = get_object_or_404(Perfil, usuario=self.request.user)
-        return self.object
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-
-        context["titulo"] = "Meus dados pessoais"
-        context["botao"] = "Atualizar"
-
-        return context
